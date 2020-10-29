@@ -2,7 +2,7 @@
 layout: post
 title: YARA Rules Reference
 date: 2020-10-28
-category: Security
+category: blog
 tags: [YARA,ThreatHunting,Dectection,Security]
 ---
 #YARA Rules Reference
