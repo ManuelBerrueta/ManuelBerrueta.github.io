@@ -3,7 +3,7 @@ layout: post
 title: YARA Rules Reference
 date: 2020-10-28
 category: security
-classes: wide
+classes: widee
 tags: [YARA,ThreatHunting,Dectection,Security]
 ---
 This is a reference to show the anatomy of a YARA rule.
@@ -13,3 +13,4 @@ This is a reference to show the anatomy of a YARA rule.
 ## Resources:
 - [YARA Official Docs](https://virustotal.github.io/yara/)
 - [YARA Rules Overview](https://cybersecurity.att.com/blogs/security-essentials/explain-yara-rules-to-me)
+- [ThreatHunter-Playbook Yara](https://github.com/OTRF/ThreatHunter-Playbook/blob/master/signatures/yara/potential_process_herpaderping.yara)
