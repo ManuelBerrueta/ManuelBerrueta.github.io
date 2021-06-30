@@ -1,6 +1,7 @@
-# Using CGroups to Cap CPU Usage 
+# Using Linux CGroups to Cap CPU Usage 
 
-There may come a time in your time where you may want to limit the amount of CPU a process/program uses on a machine for a number of different reasons. I found the best way to do it is using CGroups. You can dive and get into the weeds of CGroups here: [man cgroups](https://man7.org/linux/man-pages/man7/cgroups.7.html). As a side note/bonus, containers use CGroups to help provides the container(s) (e.g. Docker/containerd) that isolation.
+There may come a time in your time where you may want to limit the amount of CPU a process/program uses on a machine for a number of different reasons. I found the best way to do it is using CGroups. You can dive and get into the weeds of CGroups here: [man cgroups](https://man7.org/linux/man-pages/man7/cgroups.7.html). As a side note/bonus, containers use CGroups to help provides the container(s) (e.g.
+ Docker/containerd) that isolation.
 
 For my testing purposes, I wanted to limit the CPU usage to 5%. We can do this by using the cpu.cfs_quota_us and cpu.cfgs_period_us properties of the CGroup. To provide the correct ratio you just do a bit of basic math to bring you to the target usage percentage. What it comes down to here is the following: `cpu.cfs_quota_us / cpu.cfgs_period_us = CPU Usage Percent Cap`.
 
