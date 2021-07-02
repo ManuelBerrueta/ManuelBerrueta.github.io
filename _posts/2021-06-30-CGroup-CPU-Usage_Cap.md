@@ -46,5 +46,15 @@ I ran into an issue where cgexec would not behave right. It would not cap the us
 If you are going through all this trouble, you might also be interested in the execution time. You can get that by using the time utility like so:
 `time sudo cgexec -g cpu:cpulimited ./your_program_or_script.sh`
 
+# Additional Exploration
+
+## Restricting already running processes
+To restrict already running processes you can use `cgclassify` to reassign the proc(s) to your new cgroup as follows:
+`cgclassify -g cpu:cpulimited <pidNum>`
+
+
+
+
 Reference:
 - https://linuxhint.com/limit_cpu_usage_process_linux/
+- https://www.programmersought.com/article/30481340400/
