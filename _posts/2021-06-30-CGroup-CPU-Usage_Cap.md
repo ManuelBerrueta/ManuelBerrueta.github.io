@@ -29,7 +29,7 @@ sudo cgcreate -g cpu:cpulimited
 Let's set the cpu.cfs_quota_us and cpu.cfgs_period_us properties
 ```
 sudo cgset -r cpu.cfs_quota_us=10000 cpulimited
-sudo cgset -r cpu.cfgs_period_us=200000 cpulimited
+sudo cgset -r cpu.cfs_period_us=200000 cpulimited
 ```
 Altenatively, you could also use this method if you run into issues:
 ```
