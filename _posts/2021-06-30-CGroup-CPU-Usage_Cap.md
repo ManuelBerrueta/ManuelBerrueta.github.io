@@ -32,7 +32,7 @@ Altenatively, you could also use this method if you run into issues:
 echo 10000 > /sys/fs/cgroup/cpu/cpulimited/cpu.cfs_quota_us
 echo 200000 > /sys/fs/cgroup/cpu/cpulimited/cpu.cfs_period_us
 ```
-**NOTE: Make sure the path is correct**
+**NOTE: Adjust your path accordingly and check it is correct!**
 
 Let's check the properties that we have given our CGroup to inspect what you expect!
 `sudo cgget -g cpu:cpulimited`
@@ -40,21 +40,18 @@ Let's check the properties that we have given our CGroup to inspect what you exp
 Now we can run our program/script like so:
 `sudo cgexec -g cpu:cpulimited ./your_program_or_script.sh`
 
-# Important:
+**Important Note:**
 I ran into an issue where cgexec would not behave right. It would not cap the usage as I expected. The "command" I was running had a lot of pipes, so it was really multiple commands. There is a `--sticky` flag that you can used and it suppoed to have all child processed fall under the same cgroup but that did not work in my case. After a lot of troubleshooting, to solve this I put everything in a shell script. Therefore, to save your self some trouble, just throw your command in a shell script and run that instead :)
 
 If you are going through all this trouble, you might also be interested in the execution time. You can get that by using the time utility like so:
 `time sudo cgexec -g cpu:cpulimited ./your_program_or_script.sh`
 
-# Additional Exploration
-
-## Restricting already running processes
+### Restricting already running processes
 To restrict already running processes you can use `cgclassify` to reassign the proc(s) to your new cgroup as follows:
 `cgclassify -g cpu:cpulimited <pidNum>`
 
 
-
-
-Reference:
+**Reference:**
 - https://linuxhint.com/limit_cpu_usage_process_linux/
 - https://www.programmersought.com/article/30481340400/
+- https://github.com/libcgroup/libcgroup/blob/main/README
