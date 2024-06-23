@@ -1,5 +1,8 @@
 #theme: jekyll-theme-slate
-theme: jekyll-theme-minimal
 #theme: jekyll-theme-hacker
+theme: jekyll-theme-minimal
 title: Security Mindset Blog
 description: Security Research, Reverse Engineering, and Code
+
+plugins:
+  - jekyll-postfiles
