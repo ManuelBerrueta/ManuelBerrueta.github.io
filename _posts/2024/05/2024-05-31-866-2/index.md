@@ -257,4 +257,6 @@ aws eks describe-cluster --region us-east-1 --name OrganizationAccountAccessRole
 
 This is a visual representation of some of the activities involved with trying to obtain the flag and following the green arrows is the “happy” path to the flag.
 
-![](/_posts/2024/05/2024-05-31-866-2/images/Protrude_aws-1024x944.png)
+![](images/Protrude_aws-1024x944.png)
+
+<img src="images/Protrude_aws-1024x944.png" alt="GIAC Certified Incident Handler (GCIH)">
