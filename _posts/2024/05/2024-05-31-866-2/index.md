@@ -12,7 +12,7 @@ tags:
   - "pentesting"
   - "redteam"
   - "security"
-coverImage: "Protrude_aws.png"
+coverImage: "./images/Protrude_aws.png"
 ---
 
 # HTB Business CTF 2024 - The Vault of Hope
@@ -257,4 +257,4 @@ aws eks describe-cluster --region us-east-1 --name OrganizationAccountAccessRole
 
 This is a visual representation of some of the activities involved with trying to obtain the flag and following the green arrows is the “happy” path to the flag.
 
-![](./images/Protrude_aws-1024x944.png)
+![](./images/Protrude_aws-1024x944.PNG)
