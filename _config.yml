@@ -23,7 +23,7 @@ linkedin_username: manuel-berrueta
 #theme: jekyll-theme-slate
 #theme: jekyll-theme-hacker
 #theme: jekyll-theme-minimal
-theme: minima
+theme: minimal
 plugins:
   - jekyll-feed
   - jekyll-postfiles
