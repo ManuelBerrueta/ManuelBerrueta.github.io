@@ -13,6 +13,7 @@ tags:
   - "redteam"
   - "security"
 coverImage: "./images/Protrude_aws.png"
+layout: post
 ---
 
 # HTB Business CTF 2024 - The Vault of Hope
