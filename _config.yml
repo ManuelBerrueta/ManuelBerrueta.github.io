@@ -21,8 +21,8 @@ linkedin_username: manuel-berrueta
 # Build settings
 #theme: minima
 #theme: jekyll-theme-slate
-#theme: jekyll-theme-hacker
-theme: jekyll-theme-minimal
+theme: jekyll-theme-hacker
+#theme: jekyll-theme-minimal
 #theme: minima
 plugins:
   - jekyll-feed
