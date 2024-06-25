@@ -232,6 +232,7 @@ aws eks describe-access-entry --cluster-name OrganizationAccountAccessRole --pri
 An error occurred (AccessDeniedException) when calling the DescribeAccessEntry operation: User: arn:aws:iam::532587168180:user/aalmodovar is not authorized to perform: eks:DescribeAccessEntry on resource: arn:aws:eks:us-east-1:532587168180:access-entry/OrganizationAccountAccessRole////*
 ```
 
+{% highlight shell %}
 ```Shell
 cluster_endpoint=$(aws eks describe-cluster \
 --region us-east-1 \
@@ -239,6 +240,7 @@ cluster_endpoint=$(aws eks describe-cluster \
 --query "cluster.endpoint" \
 --output text)
 ```
+{% endhighlight %}
 
 ```Shell
 aws eks describe-cluster --region us-east-1 --name OrganizationAccountAccessRole --query "cluster.endpoint" --output text
@@ -259,4 +261,4 @@ aws eks describe-cluster --region us-east-1 --name OrganizationAccountAccessRole
 This is a visual representation of some of the activities involved with trying to obtain the flag and following the green arrows is the “happy” path to the flag.
 
 ![](images/Protrude_aws-1024x944.png)
-![Protrude Attack Path]({{ site.baseurl }}images/Protrude_aws-1024x944.png) 
+![Protrude Attack Path]({{ page.id }}/../images/Protrude_aws-1024x944.png) 
