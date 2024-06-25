@@ -13,7 +13,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   wide range of topics including but not limited to Red Team & Purple Team, 
   AppSec, and security best practices. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://manuelberrueta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ManuelBerrueta
 github_username:  ManuelBerrueta
 linkedin_username: manuel-berrueta
@@ -22,11 +22,16 @@ linkedin_username: manuel-berrueta
 #theme: minima
 #theme: jekyll-theme-slate
 #theme: jekyll-theme-hacker
-#theme: jekyll-theme-minimal
-theme: minima
+theme: jekyll-theme-minimal
+#theme: minima
 plugins:
   - jekyll-feed
   - jekyll-postfiles
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default.
