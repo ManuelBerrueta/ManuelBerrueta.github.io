@@ -81,7 +81,7 @@ Check page for available permissions and tooling.
 
 Using one of the commands found above via Permission Enumeration, we could list some information about Directory services As part of the Directory Services, I found it had a URL:
 
-```JSON
+```json
 "AccessUrl": "vault101.awsapps.com"
 ```
 
@@ -89,13 +89,13 @@ Using one of the commands found above via Permission Enumeration, we could list 
 
 Command for checking this:
 
-```Shell
+```console
 aws --profile default --region us-east-1 ds describe-directories
 ```
 
 ##### Output
 
-```JSON
+```json
 aws --profile default --region us-east-1 ds describe-directories
 {
     "DirectoryDescriptions": [
@@ -145,11 +145,11 @@ Doing some WorkDocs recon, I found we had access to list the documents using the
 
 #### Tool - aws cli
 
-```Shell
+```console
 aws workdocs describe-activities --organization-id d-9067e0513b
 ```
 
-```JSON
+```json
 {
     "UserActivities": [
         {
@@ -176,7 +176,7 @@ aws workdocs describe-activities --organization-id d-9067e0513b
 
 I leveraged the Id of one of them to retrieve the information and a URL for that document:
 
-```Shell
+```shell
 aws workdocs get-document --document-id 5347a27512a4f5a1c0ed4b7e965210deecbb6b806a23034ce79
 ```
 
@@ -190,7 +190,7 @@ Not everything was so straight forward and I went on a few rabbit holes to no wh
 
 ### Found a way to get an `SessionToken` as well (through the Permission Enumeration)
 
-```Shell
+```console
 aws --profile default --region us-east-1 sts get-session-token
 aws sts get-session-token --duration-seconds 86400
 ```
@@ -199,7 +199,7 @@ aws sts get-session-token --duration-seconds 86400
 
 Through one of the permissions, it gives you the command to get an eks access token:
 
-```Shell
+```shell
 aws eks get-token --profile default --region us-east-1 --cluster-name OrganizationAccountAccessRole
 ```
 
@@ -207,7 +207,7 @@ aws eks get-token --profile default --region us-east-1 --cluster-name Organizati
 - Attempted crafting the URL manually with no luck
 - I also tried running the command to get a `kubeconfig` file, but we do not have permissions for that either:
 
-```Shell
+```shell
 aws eks update-kubeconfig --region us-east-1 --name OrganizationAccountAccessRole
 ```
 
@@ -219,7 +219,7 @@ aws eks update-kubeconfig --region us-east-1 --name OrganizationAccountAccessRol
 aws eks list-associated-access-policies --cluster-name OrganizationAccountAccessRole --principal-arn AIDAXYAFLIG2E6UQ3YIVB
 ```
 
-```Shell
+```console
 An error occurred (AccessDeniedException) when calling the ListAssociatedAccessPolicies operation: User: arn:aws:iam::532587168180:user/aalmodovar is not authorized to perform: eks:ListAssociatedAccessPolicies on resource: arn:aws:eks:us-east-1:532587168180:access-entry/OrganizationAccountAccessRole////*
 ```
 
@@ -227,11 +227,11 @@ An error occurred (AccessDeniedException) when calling the ListAssociatedAccessP
 aws eks describe-access-entry --cluster-name OrganizationAccountAccessRole --principal-arn AIDAXYAFLIG2E6UQ3YIVB
 ```
 
-```Shell
+```shell
 An error occurred (AccessDeniedException) when calling the DescribeAccessEntry operation: User: arn:aws:iam::532587168180:user/aalmodovar is not authorized to perform: eks:DescribeAccessEntry on resource: arn:aws:eks:us-east-1:532587168180:access-entry/OrganizationAccountAccessRole////*
 ```
 
-```Shell
+```console
 cluster_endpoint=$(aws eks describe-cluster \
 --region us-east-1 \
 --name OrganizationAccountAccessRole \
