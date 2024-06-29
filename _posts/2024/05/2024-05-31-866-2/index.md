@@ -61,11 +61,11 @@ Searched for “Access Key Secret access key” and found this:
 
 #### Some basic **whoami** type commands:
 
-```Shell
+```shell
 aws sts get-caller-identity
 ```
 
-```JSON
+```json
 {
     "UserId": "AIDAXYAFLIG2E6UQ3YIVB",
     "Account": "532587168180",
