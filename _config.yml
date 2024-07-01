@@ -7,13 +7,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Security Mindset
+title: Security Mindset Blog
 description: >- # this means to ignore newlines until "baseurl:"
   The Security Mindset is a blog about security & technology that covers a 
   wide range of topics including but not limited to Red Team & Purple Team, 
   AppSec, and security best practices. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://manuelberrueta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+author: Manuel Berrueta
 twitter_username: ManuelBerrueta
 github_username:  ManuelBerrueta
 linkedin_username: manuel-berrueta
@@ -34,6 +35,11 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# Enter your Google Analytics web tracking code
+google_analytics: G-FLK56WPN1J 
+
+paginate: 6
 
 # Exclude from processing.
 # The following items will not be processed, by default.

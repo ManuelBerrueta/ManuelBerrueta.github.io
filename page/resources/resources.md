@@ -2,19 +2,19 @@
 title: "Resources"
 date: "2019-07-07"
 ---
-   
+  
 ## Where to start…
-Getting started of security whether it be penetration testing, DFIR, reverse engineering, etc can be a little overwhelming. The good news is that there is a lot of resources out there and the community is very helpful. Depending on what you are trying to learn, there is some resources below to help you get started. I would recommend trying to stick to one thing at first and once you get some experience and gain some confidence then go ahead and branch out to other things.
+Getting started of security whether it be penetration testing, DFIR, reverse engineering, etc can be a little overwhelming. The good news is that there is a lot of resources out there and the community is very helpful. Depending on what you are trying to learn, there is some resources below to help you get started. I would recommend trying to stick to one thing at first and once you get some experience and gain some confidence then go ahead and branch out to other things.  
 
-In the beginning it might be useful to play around with a few different concepts and tools and once you find something that really grasps your interest, dig deeper into and try to master it. YouTube is your friend, the community shares a lot of stuff and there is a lot of good tutorials and information.
+In the beginning it might be useful to play around with a few different concepts and tools and once you find something that really grasps your interest, dig deeper into and try to master it. YouTube is your friend, the community shares a lot of stuff and there is a lot of good tutorials and information.  
 
 ### Things I recommend before you begin…
-I highly recommend that you get started with some basic knowledge of networks and learn how to do some programming, especially in a scripting language. I highly recommend Python, because it is highly supported and a very powerful tool that you can use to write scripts as well as a full application.
+I highly recommend that you get started with some basic knowledge of networks and learn how to do some programming, especially in a scripting language. I highly recommend Python, because it is highly supported and a very powerful tool that you can use to write scripts as well as a full application.  
 
-For reverse engineering I recommend you learn assembly before you attempt to reverse any software/malware. You can start with something simple like MIPS and do some assembly coding so you can get an idea of how it works. Writing things in C and then disassembling the code to see what it looks like in assembly is greatly beneficial, this can help you learn some of the C constructs.
-    
-
----     
+For reverse engineering I recommend you learn assembly before you attempt to reverse any software/malware. You can start with something simple like MIPS and do some assembly coding so you can get an idea of how it works. Writing things in C and then disassembling the code to see what it looks like in assembly is greatly beneficial, this can help you learn some of the C constructs.  
+  
+  
+---  
 ## Books & Reading
 ### Software Engineering
 - Clean Code
@@ -58,8 +58,8 @@ For reverse engineering I recommend you learn assembly before you attempt to rev
     (I suggest starting with this one)
 - Applied Cryptography: Protocols, Algorithms and Source Code in C
 - Cryptography Engineering: Design Principles and Practical Applications
-[https://pagedout.institute/](https://pagedout.institute/)
-
+[https://pagedout.institute/](https://pagedout.institute/)  
+  
 ---     
 ## Tools
 ### Software Engineering

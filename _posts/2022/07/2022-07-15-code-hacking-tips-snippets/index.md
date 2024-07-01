@@ -32,7 +32,7 @@ tags:
 
 #### Encoding and Running Encoded Commads
 
-```PowerShell
+```powershell
 $CommandToExecute = "Get-ChildItem"
 $encodedcommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($CommandToExecute))
 powershell -exec bypass -w 1 -enc $encodedcommand
@@ -47,7 +47,7 @@ powershell -exec bypass -w 1 -enc $encodedcommand
 
 ### Sample Named Pipe Client
 
-```PowerShell
+```powershell
 $pipeName = 'myPipe'
 $pipe = new-object System.IO.Pipes.NamedPipeClientStream '.', $pipeName, 'In', 'None', 'Impersonation'
 $pipe.Connect(1000)
@@ -59,7 +59,7 @@ $pipe.Dispose()
 
 ### Sample Named Pipe Server
 
-```PowerShell
+```powershell
 $pipeName = 'myPipe'
 $pipe = new-object System.IO.Pipes.NamedPipeServerStream $pipeName,'Out'
 $pipe.WaitForConnection()
