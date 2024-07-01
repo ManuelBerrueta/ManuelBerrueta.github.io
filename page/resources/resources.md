@@ -13,7 +13,9 @@ I highly recommend that you get started with some basic knowledge of networks an
 
 For reverse engineering I recommend you learn assembly before you attempt to reverse any software/malware. You can start with something simple like MIPS and do some assembly coding so you can get an idea of how it works. Writing things in C and then disassembling the code to see what it looks like in assembly is greatly beneficial, this can help you learn some of the C constructs.
     
+    
 ---     
+    
 # Books & Reading
 ## Software Engineering
 - Clean Code
