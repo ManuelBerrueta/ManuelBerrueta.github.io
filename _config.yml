@@ -29,6 +29,8 @@ highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-postfiles
+  - jekyll-seo-tag
+  - jekyll-archives
 
 # Exclude from processing.
 # The following items will not be processed, by default.
