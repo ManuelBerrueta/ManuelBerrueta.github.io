@@ -256,10 +256,4 @@ aws eks describe-cluster --region us-east-1 --name OrganizationAccountAccessRole
 # Visual of the Attack Path:
 
 This is a visual representation of some of the activities involved with trying to obtain the flag and following the green arrows is the “happy” path to the flag.
-
-![](/images/Protrude_aws-1024x944.png)
-
----    
-Testing image
-
 ![](/images/2024/05/2024-05-31-HTB-Business-CTF-2024---Protrude-Challenge/Protrude_aws-1024x944.png)
