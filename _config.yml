@@ -26,12 +26,14 @@ linkedin_username: manuel-berrueta
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-postfiles
+  - jekyll-seo-tag
+  - jekyll-archives
 
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+markdown: GFM
+#markdown: kramdown
+#kramdown:
+#  input: GFM
+#  syntax_highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default.
