@@ -24,7 +24,7 @@ linkedin_username: manuel-berrueta
 #theme: jekyll-theme-hacker
 #theme: jekyll-theme-minimal
 theme: minima
-markdown: kramdown
+markdown: GFM
 highlighter: rouge
 plugins:
   - jekyll-feed
