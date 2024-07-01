@@ -265,7 +265,8 @@ This is a visual representation of some of the activities involved with trying t
 ![](./images/Protrude_aws-1024x944.png)
 ![Protrude Attack Path]({{ page.id }}/../images/Protrude_aws-1024x944.png) 
 
----   
+---    
+---    
 # Testing image includes
 
 ![](Protrude_aws-1024x944.png)
