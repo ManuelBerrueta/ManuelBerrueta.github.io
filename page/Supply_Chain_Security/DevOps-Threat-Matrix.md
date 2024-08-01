@@ -1,3 +1,8 @@
+---
+title: "DevOps Threat Matrix Table"
+parent: "Supply_Chain_Security"
+---
+
 > ⚠ **The content is sourced straight from the "[DevOps threat matrix](https://www.microsoft.com/en-us/security/blog/2023/04/06/devops-threat-matrix/)" Microsoft Security blog and the credit for the hard work goes to [Ariel Brukman](https://www.linkedin.com/in/ariel-brukman-43126a149/)**. I just created the table below with links (for my own visual ready to click reference) to the appropriate sections for easier consumption. I think it would b great to elaborate more on these in the future to include further insights 
 
 
