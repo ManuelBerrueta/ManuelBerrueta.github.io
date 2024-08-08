@@ -1,5 +1,6 @@
 ---
 title: "Supply Chain Security"
+parent: "Supply_Chain_Security"
 ---
 
 {% assign submenu_pages = site.pages | where: "parent", "Services" %}
