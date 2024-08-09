@@ -52,6 +52,14 @@ minima:
   # skin: classic
   skin: solarized
 
+navbar-links:
+  Home: /
+  Supply Chain Security: /page/Supply_Chain_Security
+  Infrastructure Security: /page/Infrastructure_Security
+  Notes: /page/notes
+  Resources: /page/resources
+  About Me: /page/whoami
+
 #paginate: 6
 
 # Exclude from processing.
