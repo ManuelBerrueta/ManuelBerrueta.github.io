@@ -51,8 +51,8 @@ google_analytics: G-FLK56WPN1J
 #  # solarized-light	   Light variant of solarized color scheme.
 #  # solarized-dark	   Dark variant of solarized color scheme.
 #  # solarized	         Adaptive skin for solarized color scheme skins.
-#  # skin: classic
-#  skin: solarized
+minima:
+  skin: dark
 
 collections:
   supply_chain_security:
