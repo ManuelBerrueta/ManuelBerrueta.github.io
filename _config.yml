@@ -22,9 +22,9 @@ linkedin_username: manuel-berrueta
 # Build settings
 #theme: jekyll-theme-slate
 #theme: jekyll-theme-hacker
-#theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
 #theme: minima
-theme: jekyll-theme-midnight
+#theme: jekyll-theme-midnight
 
 plugins:
   - jekyll-feed
