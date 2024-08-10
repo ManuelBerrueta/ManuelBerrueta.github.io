@@ -1,6 +1,7 @@
 ---
 title: "DevOps Process tldr;"
 parent: "Supply_Chain_Security"
+layout: default
 ---
 
 

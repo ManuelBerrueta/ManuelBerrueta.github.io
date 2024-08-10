@@ -1,6 +1,7 @@
 ---
 title: "Supply Chain Resources"
 parent: "Supply_Chain_Security"
+layout: default
 ---
 
 ## Supply Chain Resources
