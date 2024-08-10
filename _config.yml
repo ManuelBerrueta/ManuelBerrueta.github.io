@@ -30,6 +30,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-archives
+  - jekyll-paginate
 
 #markdown: GFM
 markdown: kramdown
@@ -61,7 +62,7 @@ collections:
 post_search: true
 
 
-#paginate: 6
+paginate: 6
 
 # Exclude from processing.
 # The following items will not be processed, by default.
