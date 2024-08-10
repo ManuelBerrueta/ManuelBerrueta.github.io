@@ -6,7 +6,7 @@ parent: "Supply_Chain_Security"
 ## Supply Chain Resources
 
 ### OWASP Top 10 CI/CD Security Risks
-- https://owasp.org/www-project-top-10-ci-cd-security-risks/
+- [https://owasp.org/www-project-top-10-ci-cd-security-risks/](https://owasp.org/www-project-top-10-ci-cd-security-risks/)
 
 
 ### S2C2F - Supply chain security framework

@@ -52,6 +52,11 @@ minima:
   # skin: classic
   skin: solarized
 
+collections:
+  supply_chain_security:
+    output: true
+    permalink: /:collection/:name
+
 
 #paginate: 6
 
