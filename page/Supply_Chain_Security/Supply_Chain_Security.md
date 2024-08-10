@@ -1,11 +1,11 @@
 ---
 title: "Supply Chain Security"
-parent: "Supply_Chain_Security"
 ---
 
-{% assign submenu_pages = site.pages | where: "parent", "Supply_Chain_Security" %}
 <ul>
-  {% for page in submenu_pages %}
-    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-  {% endfor %}
+{% for spc_page in site.supply_chain_security %}
+  <h2>
+    <li><a href="{{ spc_page.url }}"> {{ spc_page.title }} </a></li>
+  </h2>
+{% endfor %}
 </ul>
