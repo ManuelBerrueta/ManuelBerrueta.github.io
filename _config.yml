@@ -20,11 +20,12 @@ github_username:  ManuelBerrueta
 linkedin_username: manuel-berrueta
 
 # Build settings
-#theme: minima
 #theme: jekyll-theme-slate
 #theme: jekyll-theme-hacker
 #theme: jekyll-theme-minimal
-theme: minima
+#theme: minima
+theme: midnight
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -40,17 +41,17 @@ kramdown:
 google_analytics: G-FLK56WPN1J
 
 # Minima specific settings, which are only available from Minima 3.0 onward.
-minima:
-  # Minima skin selection.
-  # Available skins are:
-  # classic	           Default, light color scheme.
-  # dark	             Dark variant of the classic skin.
-  # auto	             Adaptive skin based on the default classic and dark skins.
-  # solarized-light	   Light variant of solarized color scheme.
-  # solarized-dark	   Dark variant of solarized color scheme.
-  # solarized	         Adaptive skin for solarized color scheme skins.
-  # skin: classic
-  skin: solarized
+#minima:
+#  # Minima skin selection.
+#  # Available skins are:
+#  # classic	           Default, light color scheme.
+#  # dark	             Dark variant of the classic skin.
+#  # auto	             Adaptive skin based on the default classic and dark skins.
+#  # solarized-light	   Light variant of solarized color scheme.
+#  # solarized-dark	   Dark variant of solarized color scheme.
+#  # solarized	         Adaptive skin for solarized color scheme skins.
+#  # skin: classic
+#  skin: solarized
 
 collections:
   supply_chain_security:
@@ -58,6 +59,9 @@ collections:
     permalink: /:collection/:name
 
 post_search: true
+
+Navigation:
+
 #paginate: 6
 
 # Exclude from processing.
