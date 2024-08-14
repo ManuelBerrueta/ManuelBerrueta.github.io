@@ -11,7 +11,7 @@ Semgrep is a powerful static analysis tool designed to scan code for patterns th
 - It's fairly easy to use and get up to speed with. 
 - It’s an excellent tool to integrate into your SAST process for AppSec engagements.
   
-  
+<br>
 ---   
 ## Rule Syntax
 Docs: https://semgrep.dev/docs/writing-rules/overview
@@ -90,7 +90,7 @@ $FD.write(...)
 ### Metavariables vs Ellipses
 > [!QUOTE] Using a metavariable tells Semgrep, "something is here, but I don't know what it is." Using an ellipsis tells Semgrep, "I don't care what is between here and there."
   
-  
+<br>
 ---   
 ## 🔥 Tip for Starting a Rule
 
@@ -99,7 +99,7 @@ If you are having trouble matching a pattern starting from scratch, simply:
 2. Generalize pattern by using ellipses for non-important lines and where other code could be replaced
 3. Replace variables with metavariables.
   
-  
+<br>
 ---    
 ## Pattern Composition
 >[!IMPORTANT] [Pattern-Examples](https://semgrep.dev/docs/writing-rules/pattern-examples/)
@@ -287,7 +287,7 @@ class Product(models.Model):
     price_inc = models.FloatField()
 ```
   
-
+<br>
 ---    
 ## Advanced
 To catch a case where some how this $VAR  variable is used. We can use `<... $VAR ...>`
@@ -302,7 +302,7 @@ resp.write('Response</br>' + resp);
 resp.write('Response</br>' + resp + 'foo');
 ```
   
-  
+<br>
 ---   
 ## Running Semgrep
 ```shell
@@ -321,7 +321,7 @@ semgrep --config auto [directory to scan]
 semgrep --config auto --confg ./My-Rules [directory to scan]
 ```
   
-
+<br>
 ---   
 ## Presentations
 - Semgrep: a lightweight static analysis tool for security consultant and hackers by TrailOfBits: https://youtu.be/O5mh8j7-An8?si=V2-Y9EdlkSgMvOAx
