@@ -4,21 +4,21 @@ title: Semgrep Notes
 ---
 
 # Semgrep Notes Intro
-
 These are some of my Semgrep notes gathered while going through the tutorial as well as running in operations for future reference.
+  
 ## Semgrep
 Semgrep is a powerful static analysis tool designed to scan code for patterns that may indicate potential vulnerabilities. 
 - It's fairly easy to use and get up to speed with. 
 - It’s an excellent tool to integrate into your SAST process for AppSec engagements.
-
+  
+  
 ---   
 ## Rule Syntax
 Docs: https://semgrep.dev/docs/writing-rules/overview
 > [!INFO] SemGrep uses YAML syntax.
 > The pipe (`|`) after `pattern-inside` is YAML syntax that permits multi-line strings.
-
+  
 ### ellipsis operator (**...**)
-
 #### - Skip over
 Allows you to skip over stuff you don't care about, similar to **`*`** star in RegEx.
 ```python
@@ -28,7 +28,7 @@ func(get_user(...) + "is my userid")
 ```python
 func(get_user(1) + "is my userid")
 ```
-
+  
 #### - Constant strings
 Inside quotation marks, **`"..."`** , Semgrep matches any constant string.
 ```python
@@ -40,7 +40,7 @@ func(arg, "...")
 # Match
 func(arg, "my string")
 ```
-
+  
 #### - Ignore in-between code
 It can be used to ignore in between code (expressions or statements). Example:
 ```python
@@ -48,13 +48,14 @@ function_A(param)
 ...
 function_Z(param)
 ```
-
+  
 #### - Ordered lists
 The ellipses can be used to match a pattern in an ordered list such as method/function arguments.
 - It can be used to find the first expression is a list like: `open("r", ...)`
 - It can be used to find the last expression is a list like: `open(..., "r")`
 - It can be used to find an expression anywhere in a list by using ellipses on both sided like: `open(..., "r", ...)`
-
+  
+  
 ### Metavariables
 Metavariables allow you to match something in case you don't know exactly what to match. Similar to capture groups in RegEx.
 - Must start with **$** dollar sign
@@ -62,6 +63,7 @@ Metavariables allow you to match something in case you don't know exactly what t
 	- Uppercase chars
 	- Digits
 	- Underscores
+  
 #### Metavariables Matching a function
 Metavariables can be used to match a function:
 - In this example "`$FUNC`" will match any function name.
@@ -75,7 +77,7 @@ def $FUNC(...):
     ...
     requests.$METHOD(...)
 ```
-
+  
 #### Metavariables matching regular variables
 Metavariables can be used to match regular variables as well.
 - Example of catching a bug where the file is open for read and attempting to write to it:
@@ -84,10 +86,11 @@ $FD = open($FILENAME, 'r', ...)
 ...
 $FD.write(...)
 ```
-
+  
 ### Metavariables vs Ellipses
 > [!QUOTE] Using a metavariable tells Semgrep, "something is here, but I don't know what it is." Using an ellipsis tells Semgrep, "I don't care what is between here and there."
-
+  
+  
 ---   
 ## 🔥 Tip for Starting a Rule
 
@@ -95,10 +98,12 @@ If you are having trouble matching a pattern starting from scratch, simply:
 1. Copy and paste the original code as a pattern
 2. Generalize pattern by using ellipses for non-important lines and where other code could be replaced
 3. Replace variables with metavariables.
-
+  
+  
 ---    
 ## Pattern Composition
 >[!IMPORTANT] [Pattern-Examples](https://semgrep.dev/docs/writing-rules/pattern-examples/)
+  
 ### 1. Either / Or  ([SemGrep Tutorial](https://semgrep.dev/learn/composition/1))
 If you want to match _either_ pattern1 OR pattern2, use `pattern-either`.
 ```yaml
@@ -121,7 +126,7 @@ public class Example {
   }
 }
 ```
-
+  
 ### 2. Pattern is NOT ([SemGrep Tutorial](https://semgrep.dev/learn/composition/2))
 You can use **`pattern-not`** to filter out patterns you do not want to match.
 ```yaml
@@ -147,7 +152,7 @@ subprocess.call(nonstring) # MATCH THIS
 
 subprocess.call(nonstring, shell=True) # and this!
 ```
-
+  
 ### 3. Pattern is inside - [SemGrep Tutorial](https://semgrep.dev/learn/composition/3)
 As the name implies, **`pattern-inside`** lets you search for patterns **inside** the pattern specified by `pattern-inside`.
 ```yaml
@@ -200,10 +205,7 @@ func main() {
   http.ListenAndServe(":8080", nil)
 }
 ```
-
----     
-
-
+  
 ### 4. Pattern is NOT inside [SemGrep Tutorial](https://semgrep.dev/learn/composition/4)
 A **`pattern-not-inside`** **filters out** any matches inside the **range** defined by the pattern.
 > [!NOTE] Both of these rules below match the pattern
@@ -248,8 +250,8 @@ public class CookieController {
         response.addCookie(cookie); // Try not to match here.
     }
 }
-
 ```
+  
 ### 5. Metavariable Regex [SemGrep Tutorial](https://semgrep.dev/learn/composition/5)
 One final Semgrep pattern type that is very useful is called `metavariable-regex`.
 It allows you to specify that certain metavariables **only** match variables whose names fit a specified regular expression.
@@ -284,6 +286,7 @@ class Product(models.Model):
     # match this
     price_inc = models.FloatField()
 ```
+  
 
 ---    
 ## Advanced
@@ -298,7 +301,8 @@ resp.write(resp);
 resp.write('Response</br>' + resp);
 resp.write('Response</br>' + resp + 'foo');
 ```
-
+  
+  
 ---   
 ## Running Semgrep
 ```shell
@@ -306,7 +310,7 @@ semgrep --config [path to directory w/ rules or a rule.yml] [directory with file
 ```
 - No metrics, quiet (`-q`) output with only results, and output in JSON format
 ```shell
-semgrep --config=[path to directory w/ rules or a rule.yml] --metrics=off --json --output=myScanOutput.json [directory with files or a file to scan] -q --json
+semgrep --config=[path to directory w/ rules or a rule.yml] --metrics=off -q --json --output=myScanOutput.json [directory with files or a file to scan]
 ```
 - `---config auto` uses Semgrep' s built-in rules
 ```shell
@@ -316,8 +320,8 @@ semgrep --config auto [directory to scan]
 ```shell
 semgrep --config auto --confg ./My-Rules [directory to scan]
 ```
+  
 
 ---   
 ## Presentations
 - Semgrep: a lightweight static analysis tool for security consultant and hackers by TrailOfBits: https://youtu.be/O5mh8j7-An8?si=V2-Y9EdlkSgMvOAx
- 
