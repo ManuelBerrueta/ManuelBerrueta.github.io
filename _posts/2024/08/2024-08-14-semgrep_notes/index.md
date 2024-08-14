@@ -3,17 +3,6 @@ layout: post
 title: Semgrep Notes
 ---
 
-<h2>Table of Contents</h2>
-<ul>
-{% for heading in page.content | split: '<h' %}
-  {% if forloop.index0 > 0 %}
-    <li>
-      <a href="#{{ heading | split: '>' | first | split: ' ' | last | replace: '"', '' | replace: 'id=', '' }}">{{ heading | split: '>' | last | replace: '</h', '' }}</a>
-    </li>
-  {% endif %}
-{% endfor %}
-</ul>
-
 # Semgrep Notes Intro
 
 These are some of my Semgrep notes gathered while going through the tutorial as well as running in operations for future reference.
