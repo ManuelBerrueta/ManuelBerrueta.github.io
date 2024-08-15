@@ -221,7 +221,7 @@ rules:
         ...
 ```
 
-#### Rule2
+#### Rule 2
 ```yaml
 rules:
   - id: secure-flag-not-set
