@@ -37,6 +37,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  hard_wrap: true
 
 # Enter your Google Analytics web tracking code
 google_analytics: G-FLK56WPN1J
