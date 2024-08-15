@@ -15,7 +15,7 @@ Semgrep is a powerful static analysis tool designed to scan code for patterns th
 ---   
 ## Rule Syntax
 Docs: https://semgrep.dev/docs/writing-rules/overview
-> [!INFO] SemGrep uses YAML syntax.
+> [!INFO] Semgrep uses YAML syntax.
 > The pipe (`|`) after `pattern-inside` is YAML syntax that permits multi-line strings.
   
 ### ellipsis operator (**...**)
@@ -104,7 +104,7 @@ If you are having trouble matching a pattern starting from scratch, simply:
 ## Pattern Composition
 >[!IMPORTANT] [Pattern-Examples](https://semgrep.dev/docs/writing-rules/pattern-examples/)
   
-### 1. Either / Or  ([SemGrep Tutorial](https://semgrep.dev/learn/composition/1))
+### 1. Either / Or  ([Semgrep Tutorial](https://semgrep.dev/learn/composition/1))
 If you want to match _either_ pattern1 OR pattern2, use `pattern-either`.
 ```yaml
 rules:
@@ -127,7 +127,7 @@ public class Example {
 }
 ```
   
-### 2. Pattern is NOT ([SemGrep Tutorial](https://semgrep.dev/learn/composition/2))
+### 2. Pattern is NOT ([Semgrep Tutorial](https://semgrep.dev/learn/composition/2))
 You can use **`pattern-not`** to filter out patterns you do not want to match.
 ```yaml
 rules:
@@ -153,7 +153,7 @@ subprocess.call(nonstring) # MATCH THIS
 subprocess.call(nonstring, shell=True) # and this!
 ```
   
-### 3. Pattern is inside - [SemGrep Tutorial](https://semgrep.dev/learn/composition/3)
+### 3. Pattern is inside - ([Semgrep Tutorial](https://semgrep.dev/learn/composition/3))
 As the name implies, **`pattern-inside`** lets you search for patterns **inside** the pattern specified by `pattern-inside`.
 ```yaml
 rules:
@@ -206,7 +206,7 @@ func main() {
 }
 ```
   
-### 4. Pattern is NOT inside [SemGrep Tutorial](https://semgrep.dev/learn/composition/4)
+### 4. Pattern is NOT inside ([Semgrep Tutorial](https://semgrep.dev/learn/composition/4))
 A **`pattern-not-inside`** **filters out** any matches inside the **range** defined by the pattern.
 > [!NOTE] Both of these rules below match the pattern
 
@@ -253,7 +253,7 @@ public class CookieController {
 }
 ```
   
-### 5. Metavariable Regex [SemGrep Tutorial](https://semgrep.dev/learn/composition/5)
+### 5. Metavariable Regex ([Semgrep Tutorial](https://semgrep.dev/learn/composition/5))
 One final Semgrep pattern type that is very useful is called `metavariable-regex`.
 It allows you to specify that certain metavariables **only** match variables whose names fit a specified regular expression.
 ```yaml
