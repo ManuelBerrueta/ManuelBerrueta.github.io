@@ -115,7 +115,7 @@ rules:
       - pattern: if ("..." == $X) ...
 ```
 #### Example Code that matches this rule:
-```csharp
+```cs
 public class Example {
   public int foo(String a, int b) {
       if (a == "hello") return 1;
@@ -209,6 +209,7 @@ func main() {
 ### 4. Pattern is NOT inside [SemGrep Tutorial](https://semgrep.dev/learn/composition/4)
 A **`pattern-not-inside`** **filters out** any matches inside the **range** defined by the pattern.
 > [!NOTE] Both of these rules below match the pattern
+
 #### Rule 1
 ```yaml
 rules:
@@ -219,6 +220,7 @@ rules:
         cookie.setSecure(true);
         ...
 ```
+
 #### Rule2
 ```yaml
 rules:
@@ -229,8 +231,7 @@ rules:
         $COOKIE.setSecure(true);
         ...
 ```
-> [!ERROR] Note that it looks like `VARIABLES` need to be capitalized
-> if  "COOKIE" in `$COOKIE.setSecure(true);` was 
+
 #### Example Code that matches this rule:
 ```csharp
 @Controller
