@@ -2,20 +2,6 @@
 title: "DevOps Process tldr;"
 parent: "Supply_Chain_Security"
 layout: default
-devops_mermaid_diagram: |
-```mermaid
-graph LR
-  A["Repo (Code)"] --> B["Build Pipeline (CI)"]
-  B --> C["Artifact (Output of Build)"]
-  C --> D["Release Pipeline (CD)"]
-  D --> E[Deployment of App/Code]
-
-  click A "#1-repository-repo"
-  click B "#2-build-pipeline"
-  click C "#3-artifact-output-of-build"
-  click D "#4-release-pipeline"
-  click E "#5-deployment-of-appcode"
-```
 ---   
   
 # The DevOps CI/CD Process TLDR;
