@@ -22,11 +22,11 @@ In this exercise I am going to show how to use a script to create a dynamic valu
 3. In the Script section, in the **Pre Request** section add the following code:
 	```javascript
 	function generateGUID() {
-	    function s4() {
-	        return Math.floor((1 + Math.random()) * 0x10000)
-	            .toString(16)
-	            .substring(1);
-	    }
+		function s4() {
+			return Math.floor((1 + Math.random()) * 0x10000)
+				.toString(16)
+				.substring(1);
+		}
 		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 	}
 	
