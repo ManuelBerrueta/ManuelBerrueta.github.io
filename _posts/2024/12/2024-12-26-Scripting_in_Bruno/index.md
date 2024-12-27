@@ -15,7 +15,7 @@ In this exercise I am going to show how to use a script to create a dynamic valu
 2. Add the **`myGUID`** variable within the **Body** of the request by encapsulating the variable name in double curly brackets, like so: **`{{myGUID}}`**. Here is an example of the JSON Body of a request using it:
    ```json
 	{
-		"Random Guid": "`{{`myGUID}}",
+		"Random Guid": "{{ `{{` }}myGUID}}",
 	}
 	```
    
