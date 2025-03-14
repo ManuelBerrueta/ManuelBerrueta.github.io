@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Task Groups in Azure DevOps (ADO): From Automation to Exploitation"
-categories: Proxy Tools
+categories: Supply_Chain_Security
 ---
 
 # Task Groups 

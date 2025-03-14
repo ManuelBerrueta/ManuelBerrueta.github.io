@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure DevOps Permission Analysis"
-categories: Proxy Tools
+categories: Supply_Chain_Security
 ---
 
 # Investigating ADO Permissions
