@@ -55,12 +55,14 @@ I could also imagine that earlier attacks were a proof of concept to see what wa
 ### Indicators of Compromise (IoCs)
 
 
-Per Microsoft:
+Per Microsoft:   
+    
 |                      |           |                                                               |                   |                  |
 | -------------------- | --------- | ------------------------------------------------------------- | ----------------- | ---------------- |
 | **Indicator**        | **Type**  | **Description**                                               | **First seen**    | **Last seen**    |
 | _setup_bun.js_       | File name | Malicious script that installs the Bun runtime                | November 24, 2025 | December 1, 2025 |
 | _bun_environment.js_ | File name | Script that facilitates credential gathering and exfiltration | November 24, 2025 | December 1, 2025 |
+    
 
 ### Blogs
 #### Shai Hulud
